@@ -1,7 +1,5 @@
 # Test task
 
-Terraform scripts that create S3 bucket for state files  and deploy nginx in docker container on EC2 t2.micro machine in new VPC. Access to the nginx forwarded through an application load balancer.
-
 ## Requirements
 
 Your aws user should have enough permissions for AWS services (S3, EC2, ELB, VPC) you need policies:
