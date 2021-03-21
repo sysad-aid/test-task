@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Your aws user should have enough permissions for AWS services (S3, EC2, ELB, VPC) you need policies:
+Your aws user should have enough permissions for AWS services S3, EC2, ELB, VPC. For example policies:
 
 - AmazonS3FullAccess
 - AmazonEC2FullAccess
@@ -18,9 +18,9 @@ $ export AWS_ACCESS_KEY_ID=<YourKeyID>
 $ export AWS_SECRET_ACCESS_KEY=<YourSecretAccessKey>
 ```
 
-For creating a state storage use scripts in directory `state_file`.
+For creating a state storage use script in the directory `state_file`.
 
-It creates only S3 bucket for terraform state files. It doesn't creates DB for locks.
+It creates only S3 bucket for terraform state files. It doesn't create DB for locks.
 
 ```sh
 $ cd test-task/state_file
@@ -36,7 +36,7 @@ state_bucket = "your unique bucket name"
 state_region = "your region for S3"
 ```
 
-Before running `test-task/web_service` you should change `bucket` and `region` in `terraform` block in `test-task/web_service/main.tf` file:
+Before running `test-task/web_service` you should change values `bucket` and `region` in `terraform` block inside the `test-task/web_service/main.tf` file:
 
 ```json
 terraform {
@@ -75,7 +75,7 @@ Use URL http://<load_balancer_DNS_name> for checking.
 | -------------------- | ------------------------------------------------------------ | ------------ |
 | region               | Region for test infrastructure                               | string       |
 | proj_azs             | Availability zones list. We need at least 2 availability zones for LB. | list(string) |
-| proj_name            | Unique project name that uses in all service names and tags. | string       |
+| proj_name            | Unique project name that is used in all service names and tags. | string       |
 | proj_cidr            | CIDR for VPC.                                                | string       |
 | proj_private_subnets | Used in VPC module for private subnets. We need 1 subnet.    | list(string) |
 | proj_public_subnets  | Used in VPC module for public subnetes. We need at least 2 because LB. | list(string) |
