@@ -23,7 +23,7 @@ For creating a state storage use scripts in directory `state_file`.
 It creates only S3 bucket for terraform state files. It doesn't creates DB for locks.
 
 ```sh
-$ cd test_task/state_file
+$ cd test-task/state_file
 $ terraform init
 $ terraform plan -var="state_region=<your region for S3>" -var="state_bucket=<your unique bucket name>"
 $ terraform apply -var="state_region=<your region for S3>" -var="state_bucket=<your unique bucket name>"
@@ -36,7 +36,7 @@ state_bucket = "your unique bucket name"
 state_region = "your region for S3"
 ```
 
-Before running `test_task/web_service` you should change `bucket` and `region` in `terraform` block in `test_task/web_service/main.tf` file:
+Before running `test-task/web_service` you should change `bucket` and `region` in `terraform` block in `test-task/web_service/main.tf` file:
 
 ```json
 terraform {
@@ -53,13 +53,13 @@ terraform {
 Use scripts in `web_service` folder for provisioning nginx web service in docker container in EC2.
 
 ```sh
-$ cd test_task/web_service
+$ cd test-task/web_service
 $ terraform init
 $ terraform plan
 $ terraform apply
 ```
 
-All variables are defined in test_task/web_service/variables.tf file and have default values. They can be redefined.
+All variables are defined in test-task/web_service/variables.tf file and have default values. They can be redefined.
 
 List of variables and types in "Variables" section of document.
 
